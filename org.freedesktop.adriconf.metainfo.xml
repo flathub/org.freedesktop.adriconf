@@ -24,6 +24,15 @@
       </screenshot>
    </screenshots>
    <releases>
+       <release version="2.4" date="2020-10-01" urgency="low">
+         <p>This release brings some small improvements:</p>
+         <ul>
+            <li>Renamed application from br.com.jeanhertel.adriconf to org.freedesktop.adriconf.</li>
+            <li>Handle string and float options.</li>
+            <li>Add Polish translations. @baryluk</li>
+            <li>Make various cosmetic fixes.</li>
+         </ul>
+      </release>
       <release version="2.3.2" date="2020-09-06" urgency="low">
          <p>This is a bug-fix release.</p>
          <ul>
