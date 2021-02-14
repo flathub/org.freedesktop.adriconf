@@ -181,7 +181,7 @@
             {
                "type": "git",
                "url": "https://gitlab.freedesktop.org/mesa/adriconf/",
-               "tag": "v2.4"
+               "tag": "v2.4.1"
             },
             {
                "type": "file",
