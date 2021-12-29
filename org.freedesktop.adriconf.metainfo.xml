@@ -24,14 +24,25 @@
       </screenshot>
    </screenshots>
    <releases>
-       <release version="2.4.1" date="2021-02-14" urgency="low">
+      <release version="2.5.0" date="2021-12-29" urgency="low">
+         <p>This is a maintenance release</p>
+         <ul>
+            <li>Fix various build warnings on Manjaro</li>
+            <li>Fix broken GTest dependency</li>
+            <li>Fix window size on small screens</li>
+            <li>Remove Boost dependencies</li>
+            <li>Run clang-tidy and clang-format during pipeline to improve code quality</li>
+            <li>Replace LibXML++ with pugixml</li>
+         </ul>
+      </release>
+      <release version="2.4.1" date="2021-02-14" urgency="low">
          <p>This release bring only build fixes:</p>
          <ul>
             <li>Fixes build on Manjaro</li>
             <li>Fixes build on OpenSuse</li>
          </ul>
       </release>
-       <release version="2.4" date="2020-10-01" urgency="low">
+      <release version="2.4" date="2020-10-01" urgency="low">
          <p>This release brings some small improvements:</p>
          <ul>
             <li>Renamed application from br.com.jeanhertel.adriconf to org.freedesktop.adriconf.</li>
