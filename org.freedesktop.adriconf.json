@@ -47,8 +47,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://www.cairographics.org/releases/cairomm-1.16.1.tar.xz",
-               "sha256": "6f6060d8e98dd4b8acfee2295fddbdd38cf487c07c26aad8d1a83bb9bff4a2c6"
+               "url": "https://www.cairographics.org/releases/cairomm-1.14.3.tar.xz",
+               "sha256": "0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78"
             }
          ]
       },
@@ -79,8 +79,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/pangomm/2.50/pangomm-2.50.0.tar.xz",
-               "sha256": "a27aa77e017b9afce9e751d85bd1cf890abbb3a58bf59d0fac917eef82db3b5b"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/pangomm/2.46/pangomm-2.46.2.tar.xz",
+               "sha256": "57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4"
             }
          ]
       },
