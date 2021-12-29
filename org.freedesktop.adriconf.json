@@ -22,7 +22,7 @@
          "name": "sigc++",
          "buildsystem": "meson",
          "config-opts": [
-            "--disable-documentation"
+            "-Dbuild-examples=false"
          ],
          "cleanup": [
             "/lib/sigc++-2.0"
@@ -39,7 +39,7 @@
          "name": "cairomm",
          "buildsystem": "meson",
          "config-opts": [
-            "--disable-documentation"
+            "-Dbuild-examples=false"
          ],
          "cleanup": [
             "/lib/cairomm-1.0"
@@ -56,7 +56,7 @@
          "name": "glibmm",
          "buildsystem": "meson",
          "config-opts": [
-            "--disable-documentation"
+            "-Dbuild-examples=false"
          ],
          "cleanup": [
             "/lib/glibmm-2.4",
@@ -73,9 +73,6 @@
       {
          "name": "pangomm",
          "buildsystem": "meson",
-         "config-opts": [
-            "--disable-documentation"
-         ],
          "cleanup": [
             "/lib/pangomm-1.4"
          ],
@@ -90,9 +87,6 @@
       {
          "name": "atkmm",
          "buildsystem": "meson",
-         "config-opts": [
-            "--disable-documentation"
-         ],
          "cleanup": [
             "/lib/atkmm-1.6"
          ],
@@ -108,7 +102,8 @@
          "name": "gtkmm",
          "buildsystem": "meson",
          "config-opts": [
-            "--disable-documentation"
+            "-Dbuild-demos=false",
+            "-Dbuild-tests=false"
          ],
          "cleanup": [
             "/lib/gtkmm-3.0",
