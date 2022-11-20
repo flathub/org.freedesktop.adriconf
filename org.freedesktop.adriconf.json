@@ -1,7 +1,7 @@
 {
    "app-id": "org.freedesktop.adriconf",
    "runtime": "org.freedesktop.Platform",
-   "runtime-version": "20.08",
+   "runtime-version": "22.08",
    "sdk": "org.freedesktop.Sdk",
    "command": "adriconf",
    "finish-args": [
@@ -162,7 +162,7 @@
             {
                "type": "git",
                "url": "https://gitlab.freedesktop.org/mesa/adriconf/",
-               "tag": "v2.5.0"
+               "tag": "v2.5.1"
             },
             {
                "type": "file",

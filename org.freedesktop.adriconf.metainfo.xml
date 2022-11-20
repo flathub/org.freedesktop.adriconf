@@ -24,6 +24,12 @@
       </screenshot>
    </screenshots>
    <releases>
+      <release version="2.5.1" date="2022-11-20" urgency="low">
+         <p>This is a maintenance release</p>
+         <ul>
+            <li>Updated Platform SDK from 20.08 to 22.08</li>
+         </ul>
+      </release>
       <release version="2.5.0" date="2021-12-29" urgency="low">
          <p>This is a maintenance release</p>
          <ul>
