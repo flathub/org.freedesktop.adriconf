@@ -65,8 +65,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/glibmm/2.74/glibmm-2.74.1.tar.xz",
-               "sha256": "1b78fb9d282a76b322866d5e2eeff288a25dec9c9464d85cd34969cd40cc1999"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/glibmm/2.72/glibmm-2.72.1.tar.xz",
+               "sha256": "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8"
             }
          ]
       },
