@@ -24,6 +24,14 @@
       </screenshot>
    </screenshots>
    <releases>
+      <release version="2.6.0" date="2023-03-15" urgency="low">
+         <p>This release ports the app to GTK 4</p>
+         <ul>
+            <li>Port the app to use GTKmm 4</li>
+            <li>Update all dependencies in Flatpak to latest versions</li>
+            <li>Fix Flatpak artifact cleanup</li>
+         </ul>
+      </release>
       <release version="2.5.1" date="2022-11-20" urgency="low">
          <p>This is a maintenance release</p>
          <ul>
