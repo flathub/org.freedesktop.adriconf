@@ -1,8 +1,8 @@
 {
    "app-id": "org.freedesktop.adriconf",
-   "runtime": "org.freedesktop.Platform",
+   "runtime": "org.gnome.Platform",
    "runtime-version": "22.08",
-   "sdk": "org.freedesktop.Sdk",
+   "sdk": "org.gnome.Sdk",
    "command": "adriconf",
    "finish-args": [
       "--socket=x11",
