@@ -1,7 +1,7 @@
 {
    "app-id": "org.freedesktop.adriconf",
    "runtime": "org.gnome.Platform",
-   "runtime-version": "22.08",
+   "runtime-version": "43",
    "sdk": "org.gnome.Sdk",
    "command": "adriconf",
    "finish-args": [
