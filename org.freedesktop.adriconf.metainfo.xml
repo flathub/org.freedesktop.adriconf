@@ -24,6 +24,12 @@
       </screenshot>
    </screenshots>
    <releases>
+      <release version="2.7.1" date="2023-08-07" urgency="low">
+         <p>This is a maintenance release</p>
+         <ul>
+            <li>Fix build with GCC 13 @Polynomial-C</li>
+         </ul>
+      </release>
       <release version="2.7.0" date="2023-04-11" urgency="low">
          <p>This is a maintenance release</p>
          <ul>
