@@ -1,7 +1,7 @@
 {
    "app-id": "org.freedesktop.adriconf",
    "runtime": "org.gnome.Platform",
-   "runtime-version": "43",
+   "runtime-version": "46",
    "sdk": "org.gnome.Sdk",
    "command": "adriconf",
    "finish-args": [
@@ -30,8 +30,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.4/libsigc++-3.4.0.tar.xz",
-               "sha256": "02e2630ffb5ce93cd52c38423521dfe7063328863a6e96d41d765a6116b8707e"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz",
+               "sha256": "c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17"
             }
          ]
       },
@@ -42,13 +42,13 @@
             "-Dbuild-examples=false"
          ],
          "cleanup": [
-            "/lib/cairomm-1.16"
+            "/lib/cairomm-1.18"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://www.cairographics.org/releases/cairomm-1.16.2.tar.xz",
-               "sha256": "6a63bf98a97dda2b0f55e34d1b5f3fb909ef8b70f9b8d382cb1ff3978e7dc13f"
+               "url": "https://www.cairographics.org/releases/cairomm-1.18.0.tar.xz",
+               "sha256": "b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb"
             }
          ]
       },
@@ -59,14 +59,14 @@
             "-Dbuild-examples=false"
          ],
          "cleanup": [
-            "/lib/glibmm-2.76",
-            "/lib/giomm-2.76"
+            "/lib/glibmm-2.80",
+            "/lib/giomm-2.80"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/glibmm/2.72/glibmm-2.72.1.tar.xz",
-               "sha256": "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/glibmm/2.80/glibmm-2.80.0.tar.xz",
+               "sha256": "539b0a29e15a96676c4f0594541250566c5ca44da5d4d87a3732fa2d07909e4a"
             }
          ]
       },
@@ -74,13 +74,13 @@
          "name": "pangomm",
          "buildsystem": "meson",
          "cleanup": [
-            "/lib/pangomm-2.50"
+            "/lib/pangomm-2.52"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/pangomm/2.50/pangomm-2.50.0.tar.xz",
-               "sha256": "a27aa77e017b9afce9e751d85bd1cf890abbb3a58bf59d0fac917eef82db3b5b"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/pangomm/2.52/pangomm-2.52.0.tar.xz",
+               "sha256": "34a134126a6484ff12f774358c36ecc44d0e9df094e1b83796d9774bb7d24947"
             }
          ]
       },
@@ -93,8 +93,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/atkmm/2.36/atkmm-2.36.2.tar.xz",
-               "sha256": "6f62dd99f746985e573605937577ccfc944368f606a71ca46342d70e1cdae079"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/atkmm/2.36/atkmm-2.36.3.tar.xz",
+               "sha256": "6ec264eaa0c4de0adb7202c600170bde9a7fbe4d466bfbe940eaf7faaa6c5974"
             }
          ]
       },
@@ -112,8 +112,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/gtkmm/4.8/gtkmm-4.8.0.tar.xz",
-               "sha256": "c82786d46e2b07346b6397ca7f1929d952f4922fa5c9db3dee08498b9a136cf5"
+               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/gtkmm/4.14/gtkmm-4.14.0.tar.xz",
+               "sha256": "9350a0444b744ca3dc69586ebd1b6707520922b6d9f4f232103ce603a271ecda"
             }
          ]
       },
@@ -123,8 +123,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://github.com/zeux/pugixml/releases/download/v1.13/pugixml-1.13.tar.gz",
-               "sha256": "40c0b3914ec131485640fa57e55bf1136446026b41db91c1bef678186a12abbe"
+               "url": "https://github.com/zeux/pugixml/releases/download/v1.14/pugixml-1.14.tar.gz",
+               "sha256": "2f10e276870c64b1db6809050a75e11a897a8d7456c4be5c6b2e35a11168a015"
             }
          ]
       },
@@ -137,8 +137,8 @@
          "sources": [
             {
                "type": "archive",
-               "url": "https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.9.0.tar.xz",
-               "sha256": "cdea7ae97239dee23249a09c68a19a287a3f109fbeb2c232ebb616cb38599012"
+               "url": "https://github.com/pciutils/pciutils/archive/refs/tags/v3.12.0.tar.gz",
+               "sha256": "3a76ca02581fed03d0470ba822e72ee06e492442a990062f9638dec90018505f"
             }
          ],
          "no-autogen": true,
@@ -162,7 +162,7 @@
             {
                "type": "git",
                "url": "https://gitlab.freedesktop.org/mesa/adriconf/",
-               "tag": "v2.7.1"
+               "tag": "v2.7.2"
             },
             {
                "type": "file",
