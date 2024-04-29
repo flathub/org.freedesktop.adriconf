@@ -25,84 +25,106 @@
    </screenshots>
    <releases>
       <release version="2.7.2" date="2024-04-28" urgency="low">
-         <p>This is a maintenance release</p>
-         <ul>
-            <li>Updated dependencies</li>
-         </ul>
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Updated dependencies</li>
+            </ul>
+         </description>
       </release>
       <release version="2.7.1" date="2023-08-07" urgency="low">
-         <p>This is a maintenance release</p>
-         <ul>
-            <li>Fix build with GCC 13 @Polynomial-C</li>
-         </ul>
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Fix build with GCC 13 @Polynomial-C</li>
+            </ul>
+         </description>
       </release>
       <release version="2.7.0" date="2023-04-11" urgency="low">
-         <p>This is a maintenance release</p>
-         <ul>
-            <li>Adjusted app to better handle very small screens</li>
-            <li>Dropped dependency on X11</li>
-            <li>Support new executable_regexp and sha1 profile attributes</li>
-         </ul>
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Adjusted app to better handle very small screens</li>
+               <li>Dropped dependency on X11</li>
+               <li>Support new executable_regexp and sha1 profile attributes</li>
+            </ul>
+         </description>
       </release>
       <release version="2.6.0" date="2023-03-15" urgency="low">
-         <p>This release ports the app to GTK 4</p>
-         <ul>
-            <li>Port the app to use GTKmm 4</li>
-            <li>Update all dependencies in Flatpak to latest versions</li>
-            <li>Fix Flatpak artifact cleanup</li>
-         </ul>
+         <description>
+            <p>This release ports the app to GTK 4</p>
+            <ul>
+               <li>Port the app to use GTKmm 4</li>
+               <li>Update all dependencies in Flatpak to latest versions</li>
+               <li>Fix Flatpak artifact cleanup</li>
+            </ul>
+         </description>
       </release>
       <release version="2.5.1" date="2022-11-20" urgency="low">
-         <p>This is a maintenance release</p>
-         <ul>
-            <li>Updated Platform SDK from 20.08 to 22.08</li>
-         </ul>
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Updated Platform SDK from 20.08 to 22.08</li>
+            </ul>
+         </description>
       </release>
       <release version="2.5.0" date="2021-12-29" urgency="low">
-         <p>This is a maintenance release</p>
-         <ul>
-            <li>Fix various build warnings on Manjaro</li>
-            <li>Fix broken GTest dependency</li>
-            <li>Fix window size on small screens</li>
-            <li>Remove Boost dependencies</li>
-            <li>Run clang-tidy and clang-format during pipeline to improve code quality</li>
-            <li>Replace LibXML++ with pugixml</li>
-         </ul>
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Fix various build warnings on Manjaro</li>
+               <li>Fix broken GTest dependency</li>
+               <li>Fix window size on small screens</li>
+               <li>Remove Boost dependencies</li>
+               <li>Run clang-tidy and clang-format during pipeline to improve code quality</li>
+               <li>Replace LibXML++ with pugixml</li>
+            </ul>
+         </description>
       </release>
       <release version="2.4.1" date="2021-02-14" urgency="low">
-         <p>This release bring only build fixes:</p>
-         <ul>
-            <li>Fixes build on Manjaro</li>
-            <li>Fixes build on OpenSuse</li>
-         </ul>
+         <description>
+            <p>This release bring only build fixes:</p>
+            <ul>
+               <li>Fixes build on Manjaro</li>
+               <li>Fixes build on OpenSuse</li>
+            </ul>
+         </description>
       </release>
       <release version="2.4" date="2020-10-01" urgency="low">
-         <p>This release brings some small improvements:</p>
-         <ul>
-            <li>Renamed application from br.com.jeanhertel.adriconf to org.freedesktop.adriconf.</li>
-            <li>Handle string and float options.</li>
-            <li>Add Polish translations. @baryluk</li>
-            <li>Make various cosmetic fixes.</li>
-         </ul>
+         <description>
+            <p>This release brings some small improvements:</p>
+            <ul>
+               <li>Renamed application from br.com.jeanhertel.adriconf to org.freedesktop.adriconf.</li>
+               <li>Handle string and float options.</li>
+               <li>Add Polish translations. @baryluk</li>
+               <li>Make various cosmetic fixes.</li>
+            </ul>
+         </description>
       </release>
       <release version="2.3.2" date="2020-09-06" urgency="low">
-         <p>This is a bug-fix release.</p>
-         <ul>
-            <li>Update Sdk version to 20.08.</li>
-            <li>Rename application to org.freedesktop.adriconf</li>
-         </ul>
+         <description>
+            <p>This is a bug-fix release.</p>
+            <ul>
+               <li>Update Sdk version to 20.08.</li>
+               <li>Rename application to org.freedesktop.adriconf</li>
+            </ul>
+         </description>
       </release>
       <release version="2.3.1" date="2020-09-06" urgency="low">
-         <p>This is a bug-fix release.</p>
-         <ul>
-            <li>Update translations</li>
-         </ul>
+         <description>
+            <p>This is a bug-fix release.</p>
+            <ul>
+               <li>Update translations</li>
+            </ul>
+         </description>
       </release>
       <release version="2.3" date="2020-09-06" urgency="low">
-         <p>This is a bug-fix release.</p>
-         <ul>
-            <li>Fix missing translations on Flatpak.</li>
-         </ul>
+         <description>
+            <p>This is a bug-fix release.</p>
+            <ul>
+               <li>Fix missing translations on Flatpak.</li>
+            </ul>
+         </description>
       </release>
       <release version="2.2" date="2020-09-06" urgency="low">
          <description>
@@ -267,5 +289,7 @@
    <content_rating type="oars-1.1" />
    <url type="homepage">https://gitlab.freedesktop.org/mesa/adriconf</url>
    <update_contact>jean.hertel@hotmail.com</update_contact>
-   <developer_name>Jean Hertel</developer_name>
+   <developer id="hertel.club">
+      <name>Jean Hertel</name>
+   </developer>
 </component>
