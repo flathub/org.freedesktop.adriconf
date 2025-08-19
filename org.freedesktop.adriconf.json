@@ -1,7 +1,7 @@
 {
    "app-id": "org.freedesktop.adriconf",
    "runtime": "org.gnome.Platform",
-   "runtime-version": "46",
+   "runtime-version": "48",
    "sdk": "org.gnome.Sdk",
    "command": "adriconf",
    "finish-args": [
@@ -25,12 +25,15 @@
             "-Dbuild-examples=false"
          ],
          "cleanup": [
+            "*.la",
+            "/include/sigc++-3.0",
+            "/lib/pkgconfig",
             "/lib/sigc++-3.0"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz",
+               "url": "https://download.gnome.org/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz",
                "sha256": "c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17"
             }
          ]
@@ -42,7 +45,10 @@
             "-Dbuild-examples=false"
          ],
          "cleanup": [
-            "/lib/cairomm-1.18"
+            "*.la",
+            "/include",
+            "/lib/cairomm-1.16",
+            "/lib/pkgconfig"
          ],
          "sources": [
             {
@@ -59,14 +65,19 @@
             "-Dbuild-examples=false"
          ],
          "cleanup": [
-            "/lib/glibmm-2.80",
-            "/lib/giomm-2.80"
+            "*.la",
+            "/include/glibmm-2.68",
+            "/include/giomm-2.68",
+            "/lib/glibmm-2.68",
+            "/lib/giomm-2.68",
+            "/lib/libglibmm_generate_extra_defs*",
+            "/lib/pkgconfig"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/glibmm/2.80/glibmm-2.80.0.tar.xz",
-               "sha256": "539b0a29e15a96676c4f0594541250566c5ca44da5d4d87a3732fa2d07909e4a"
+               "url": "https://download.gnome.org/sources/glibmm/2.84/glibmm-2.84.0.tar.xz",
+               "sha256": "56ee5f51c8acfc0afdf46959316e4c8554cb50ed2b6bc5ce389d979cbb642509"
             }
          ]
       },
@@ -74,13 +85,16 @@
          "name": "pangomm",
          "buildsystem": "meson",
          "cleanup": [
-            "/lib/pangomm-2.52"
+            "*.la",
+            "/include/pangomm-2.48",
+            "/lib/pangomm-2.48",
+            "/lib/pkgconfig"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/pangomm/2.52/pangomm-2.52.0.tar.xz",
-               "sha256": "34a134126a6484ff12f774358c36ecc44d0e9df094e1b83796d9774bb7d24947"
+               "url": "https://download.gnome.org/sources/pangomm/2.56/pangomm-2.56.1.tar.xz",
+               "sha256": "539f5aa60e9bdc6b955bb448e2a62cc14562744df690258040fbb74bf885755d"
             }
          ]
       },
@@ -88,12 +102,15 @@
          "name": "atkmm",
          "buildsystem": "meson",
          "cleanup": [
-            "/lib/atkmm-2.36"
+            "*.la",
+            "/include/atkmm-2.36",
+            "/lib/atkmm-2.36",
+            "/lib/pkgconfig"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/atkmm/2.36/atkmm-2.36.3.tar.xz",
+               "url": "https://download.gnome.org/sources/atkmm/2.36/atkmm-2.36.3.tar.xz",
                "sha256": "6ec264eaa0c4de0adb7202c600170bde9a7fbe4d466bfbe940eaf7faaa6c5974"
             }
          ]
@@ -102,29 +119,41 @@
          "name": "gtkmm",
          "buildsystem": "meson",
          "config-opts": [
+            "-Dmaintainer-mode=false",
             "-Dbuild-demos=false",
             "-Dbuild-tests=false"
          ],
          "cleanup": [
+            "*.a",
+            "*.la",
+            "/include",
+            "/lib/gdkmm-4.0",
             "/lib/gtkmm-4.0",
-            "/lib/gdkmm-4.0"
+            "/lib/pkgconfig",
+            "/man",
+            "/share/aclocal",
+            "/share/man",
+            "/share/pkgconfig"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://ftp.acc.umu.se/pub/GNOME/sources/gtkmm/4.14/gtkmm-4.14.0.tar.xz",
-               "sha256": "9350a0444b744ca3dc69586ebd1b6707520922b6d9f4f232103ce603a271ecda"
+               "url": "https://download.gnome.org/sources/gtkmm/4.18/gtkmm-4.18.0.tar.xz",
+               "sha256": "2ee31c15479fc4d8e958b03c8b5fbbc8e17bc122c2a2f544497b4e05619e33ec"
             }
          ]
       },
       {
          "name": "pugixml",
+         "cleanup": [
+            "/lib/cmake"
+         ],
          "buildsystem": "cmake",
          "sources": [
             {
                "type": "archive",
-               "url": "https://github.com/zeux/pugixml/releases/download/v1.14/pugixml-1.14.tar.gz",
-               "sha256": "2f10e276870c64b1db6809050a75e11a897a8d7456c4be5c6b2e35a11168a015"
+               "url": "https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz",
+               "sha256": "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
             }
          ]
       },
@@ -132,13 +161,16 @@
          "name": "libpci",
          "cleanup": [
             "/sbin",
-            "/man"
+            "/bin",
+            "/man",
+            "*.a",
+            "*.la"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://github.com/pciutils/pciutils/archive/refs/tags/v3.12.0.tar.gz",
-               "sha256": "3a76ca02581fed03d0470ba822e72ee06e492442a990062f9638dec90018505f"
+               "url": "https://github.com/pciutils/pciutils/releases/download/v3.14.0/pciutils-3.14.0.tar.gz",
+               "sha256": "e31c79722dbbe9d2906b92996ce295268e54d4342fefe3ff476caa613e51be2a"
             }
          ],
          "no-autogen": true,
@@ -162,7 +194,7 @@
             {
                "type": "git",
                "url": "https://gitlab.freedesktop.org/mesa/adriconf/",
-               "tag": "v2.7.2"
+               "tag": "v2.7.3"
             },
             {
                "type": "file",
