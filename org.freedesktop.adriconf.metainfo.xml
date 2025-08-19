@@ -24,6 +24,16 @@
       </screenshot>
    </screenshots>
    <releases>
+      <release version="2.7.3" date="2025-08-19" urgency="low">
+         <description>
+            <p>This is a maintenance release</p>
+            <ul>
+               <li>Fix build with GCC 15 @Polynomial-C</li>
+               <li>Update all Flatpak dependencies to latest</li>
+               <li>Update Flatpak Sdk to Gnome 48</li>
+            </ul>
+         </description>
+      </release>
       <release version="2.7.2" date="2024-04-28" urgency="low">
          <description>
             <p>This is a maintenance release</p>
