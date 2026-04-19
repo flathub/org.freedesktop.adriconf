@@ -1,7 +1,7 @@
 {
    "app-id": "org.freedesktop.adriconf",
    "runtime": "org.gnome.Platform",
-   "runtime-version": "48",
+   "runtime-version": "50",
    "sdk": "org.gnome.Sdk",
    "command": "adriconf",
    "finish-args": [
@@ -13,21 +13,23 @@
    ],
    "cleanup": [
       "/include",
+      "/lib/cmake",
       "/lib/pkgconfig",
-      "*.a",
-      "*.la"
+      "/man",
+      "*.la",
+      "*.a"
    ],
    "modules": [
       {
          "name": "sigc++",
          "buildsystem": "meson",
          "config-opts": [
-            "-Dbuild-examples=false"
+            "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false",
+            "-Dbuild-examples=false",
+            "-Dbuild-tests=false"
          ],
          "cleanup": [
-            "*.la",
-            "/include/sigc++-3.0",
-            "/lib/pkgconfig",
             "/lib/sigc++-3.0"
          ],
          "sources": [
@@ -42,13 +44,13 @@
          "name": "cairomm",
          "buildsystem": "meson",
          "config-opts": [
-            "-Dbuild-examples=false"
+            "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false",
+            "-Dbuild-examples=false",
+            "-Dbuild-tests=false"
          ],
          "cleanup": [
-            "*.la",
-            "/include",
-            "/lib/cairomm-1.16",
-            "/lib/pkgconfig"
+            "/lib/cairomm-1.*"
          ],
          "sources": [
             {
@@ -62,33 +64,32 @@
          "name": "glibmm",
          "buildsystem": "meson",
          "config-opts": [
+            "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false",
             "-Dbuild-examples=false"
          ],
          "cleanup": [
-            "*.la",
-            "/include/glibmm-2.68",
-            "/include/giomm-2.68",
-            "/lib/glibmm-2.68",
-            "/lib/giomm-2.68",
-            "/lib/libglibmm_generate_extra_defs*",
-            "/lib/pkgconfig"
+            "/lib/glibmm-2.*",
+            "/lib/giomm-2.*",
+            "/lib/libglibmm_generate_extra_defs*"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.gnome.org/sources/glibmm/2.84/glibmm-2.84.0.tar.xz",
-               "sha256": "56ee5f51c8acfc0afdf46959316e4c8554cb50ed2b6bc5ce389d979cbb642509"
+               "url": "https://download.gnome.org/sources/glibmm/2.86/glibmm-2.86.0.tar.xz",
+               "sha256": "39c0e9f6da046d679390774efdb9ad564436236736dc2f7825e614b2d4087826"
             }
          ]
       },
       {
          "name": "pangomm",
          "buildsystem": "meson",
+         "config-opts": [
+            "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false"
+         ],
          "cleanup": [
-            "*.la",
-            "/include/pangomm-2.48",
-            "/lib/pangomm-2.48",
-            "/lib/pkgconfig"
+            "/lib/pangomm-2.*"
          ],
          "sources": [
             {
@@ -101,11 +102,12 @@
       {
          "name": "atkmm",
          "buildsystem": "meson",
+         "config-opts": [
+            "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false"
+         ],
          "cleanup": [
-            "*.la",
-            "/include/atkmm-2.36",
-            "/lib/atkmm-2.36",
-            "/lib/pkgconfig"
+            "/lib/atkmm-2.*"
          ],
          "sources": [
             {
@@ -120,35 +122,25 @@
          "buildsystem": "meson",
          "config-opts": [
             "-Dmaintainer-mode=false",
+            "-Dbuild-documentation=false",
             "-Dbuild-demos=false",
             "-Dbuild-tests=false"
          ],
          "cleanup": [
-            "*.a",
-            "*.la",
-            "/include",
             "/lib/gdkmm-4.0",
-            "/lib/gtkmm-4.0",
-            "/lib/pkgconfig",
-            "/man",
-            "/share/aclocal",
-            "/share/man",
-            "/share/pkgconfig"
+            "/lib/gtkmm-4.0"
          ],
          "sources": [
             {
                "type": "archive",
-               "url": "https://download.gnome.org/sources/gtkmm/4.18/gtkmm-4.18.0.tar.xz",
-               "sha256": "2ee31c15479fc4d8e958b03c8b5fbbc8e17bc122c2a2f544497b4e05619e33ec"
+               "url": "https://download.gnome.org/sources/gtkmm/4.20/gtkmm-4.20.0.tar.xz",
+               "sha256": "daad9bf9b70f90975f91781fc7a656c923a91374261f576c883cd3aebd59c833"
             }
          ]
       },
       {
          "name": "pugixml",
-         "cleanup": [
-            "/lib/cmake"
-         ],
-         "buildsystem": "cmake",
+         "buildsystem": "cmake-ninja",
          "sources": [
             {
                "type": "archive",
@@ -161,10 +153,7 @@
          "name": "libpci",
          "cleanup": [
             "/sbin",
-            "/bin",
-            "/man",
-            "*.a",
-            "*.la"
+            "/bin"
          ],
          "sources": [
             {
@@ -190,21 +179,18 @@
          "name": "adriconf",
          "buildsystem": "cmake-ninja",
          "config-opts": ["-DENABLE_UNIT_TESTS=0"],
+         "post-install": [
+            "install -Dm644 flatpak/org.freedesktop.adriconf.metainfo.xml -t /app/share/metainfo/",
+            "install -Dm644 flatpak/org.freedesktop.adriconf.desktop -t /app/share/applications/",
+            "install -Dm644 flatpak/org.freedesktop.adriconf.png -t /app/share/icons/hicolor/256x256/apps/"
+         ],
          "sources": [
             {
                "type": "git",
-               "url": "https://gitlab.freedesktop.org/mesa/adriconf/",
-               "tag": "v2.7.3"
-            },
-            {
-               "type": "file",
-               "path": "org.freedesktop.adriconf.metainfo.xml"
+               "url": "https://gitlab.freedesktop.org/mesa/adriconf.git",
+               "tag": "v.2.7.4",
+               "commit": "f29e4ddbff0ae414dc705176e10fda50f2a8d355"
             }
-         ],
-         "build-commands": [
-            "install -Dm644 org.freedesktop.adriconf.metainfo.xml /app/share/metainfo/org.freedesktop.adriconf.metainfo.xml",
-            "install -Dm644 flatpak/org.freedesktop.adriconf.desktop /app/share/applications/org.freedesktop.adriconf.desktop",
-            "install -Dm644 flatpak/org.freedesktop.adriconf.png /app/share/icons/hicolor/256x256/apps/org.freedesktop.adriconf.png"
          ]
       }
    ]
