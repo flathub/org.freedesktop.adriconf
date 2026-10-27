@@ -1,197 +1,82 @@
 {
-   "app-id": "org.freedesktop.adriconf",
-   "runtime": "org.gnome.Platform",
-   "runtime-version": "50",
-   "sdk": "org.gnome.Sdk",
-   "command": "adriconf",
-   "finish-args": [
-      "--socket=x11",
-      "--socket=wayland",
-      "--share=ipc",
-      "--device=dri",
-      "--filesystem=host"
-   ],
-   "cleanup": [
-      "/include",
-      "/lib/cmake",
-      "/lib/pkgconfig",
-      "/man",
-      "*.la",
-      "*.a"
-   ],
-   "modules": [
-      {
-         "name": "sigc++",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false",
-            "-Dbuild-examples=false",
-            "-Dbuild-tests=false"
-         ],
-         "cleanup": [
-            "/lib/sigc++-3.0"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.gnome.org/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz",
-               "sha256": "c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17"
-            }
-         ]
-      },
-      {
-         "name": "cairomm",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false",
-            "-Dbuild-examples=false",
-            "-Dbuild-tests=false"
-         ],
-         "cleanup": [
-            "/lib/cairomm-1.*"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://www.cairographics.org/releases/cairomm-1.18.0.tar.xz",
-               "sha256": "b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb"
-            }
-         ]
-      },
-      {
-         "name": "glibmm",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false",
-            "-Dbuild-examples=false"
-         ],
-         "cleanup": [
-            "/lib/glibmm-2.*",
-            "/lib/giomm-2.*",
-            "/lib/libglibmm_generate_extra_defs*"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.gnome.org/sources/glibmm/2.86/glibmm-2.86.0.tar.xz",
-               "sha256": "39c0e9f6da046d679390774efdb9ad564436236736dc2f7825e614b2d4087826"
-            }
-         ]
-      },
-      {
-         "name": "pangomm",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false"
-         ],
-         "cleanup": [
-            "/lib/pangomm-2.*"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.gnome.org/sources/pangomm/2.56/pangomm-2.56.1.tar.xz",
-               "sha256": "539f5aa60e9bdc6b955bb448e2a62cc14562744df690258040fbb74bf885755d"
-            }
-         ]
-      },
-      {
-         "name": "atkmm",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false"
-         ],
-         "cleanup": [
-            "/lib/atkmm-2.*"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.gnome.org/sources/atkmm/2.36/atkmm-2.36.3.tar.xz",
-               "sha256": "6ec264eaa0c4de0adb7202c600170bde9a7fbe4d466bfbe940eaf7faaa6c5974"
-            }
-         ]
-      },
-      {
-         "name": "gtkmm",
-         "buildsystem": "meson",
-         "config-opts": [
-            "-Dmaintainer-mode=false",
-            "-Dbuild-documentation=false",
-            "-Dbuild-demos=false",
-            "-Dbuild-tests=false"
-         ],
-         "cleanup": [
-            "/lib/gdkmm-4.0",
-            "/lib/gtkmm-4.0"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://download.gnome.org/sources/gtkmm/4.20/gtkmm-4.20.0.tar.xz",
-               "sha256": "daad9bf9b70f90975f91781fc7a656c923a91374261f576c883cd3aebd59c833"
-            }
-         ]
-      },
-      {
-         "name": "pugixml",
-         "buildsystem": "cmake-ninja",
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz",
-               "sha256": "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
-            }
-         ]
-      },
-      {
-         "name": "libpci",
-         "cleanup": [
-            "/sbin",
-            "/bin"
-         ],
-         "sources": [
-            {
-               "type": "archive",
-               "url": "https://github.com/pciutils/pciutils/releases/download/v3.14.0/pciutils-3.14.0.tar.gz",
-               "sha256": "e31c79722dbbe9d2906b92996ce295268e54d4342fefe3ff476caa613e51be2a"
-            }
-         ],
-         "no-autogen": true,
-         "make-args": [
-            "SHARED=yes",
-            "PREFIX=/app",
-            "SHAREDIR=/app/share/hwdata"
-         ],
-         "make-install-args": [
-            "SHARED=yes",
-            "PREFIX=/app",
-            "SHAREDIR=/app/share/hwdata",
-            "install-lib"
-         ]
-      },
-      {
-         "name": "adriconf",
-         "buildsystem": "cmake-ninja",
-         "config-opts": ["-DENABLE_UNIT_TESTS=0"],
-         "post-install": [
-            "install -Dm644 flatpak/org.freedesktop.adriconf.metainfo.xml -t /app/share/metainfo/",
-            "install -Dm644 flatpak/org.freedesktop.adriconf.desktop -t /app/share/applications/",
-            "install -Dm644 flatpak/org.freedesktop.adriconf.png -t /app/share/icons/hicolor/256x256/apps/"
-         ],
-         "sources": [
-            {
-               "type": "git",
-               "url": "https://gitlab.freedesktop.org/mesa/adriconf.git",
-               "tag": "v.2.7.4",
-               "commit": "f29e4ddbff0ae414dc705176e10fda50f2a8d355"
-            }
-         ]
-      }
-   ]
+    "app-id": "org.freedesktop.adriconf",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "51",
+    "sdk": "org.gnome.Sdk",
+    "command": "adriconf",
+    "finish-args": [
+        "--socket=x11",
+        "--socket=wayland",
+        "--share=ipc",
+        "--device=dri",
+        "--filesystem=host"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/man",
+        "*.la",
+        "*.a"
+    ],
+    "modules": [
+        "gtkmm.json",
+        {
+            "name": "pugixml",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz",
+                    "sha256": "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
+                }
+            ]
+        },
+        {
+            "name": "libpci",
+            "cleanup": [
+                "/sbin",
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/pciutils/pciutils/releases/download/v3.14.0/pciutils-3.14.0.tar.gz",
+                    "sha256": "e31c79722dbbe9d2906b92996ce295268e54d4342fefe3ff476caa613e51be2a"
+                }
+            ],
+            "no-autogen": true,
+            "make-args": [
+                "SHARED=yes",
+                "PREFIX=/app",
+                "SHAREDIR=/app/share/hwdata"
+            ],
+            "make-install-args": [
+                "SHARED=yes",
+                "PREFIX=/app",
+                "SHAREDIR=/app/share/hwdata",
+                "install-lib"
+            ]
+        },
+        {
+            "name": "adriconf",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_UNIT_TESTS=0"
+            ],
+            "post-install": [
+                "install -Dm644 flatpak/org.freedesktop.adriconf.metainfo.xml -t /app/share/metainfo/",
+                "install -Dm644 flatpak/org.freedesktop.adriconf.desktop -t /app/share/applications/",
+                "install -Dm644 flatpak/org.freedesktop.adriconf.png -t /app/share/icons/hicolor/256x256/apps/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/mesa/adriconf.git",
+                    "tag": "v2.7.5",
+                    "commit": "9962462101c2c7f2b7e767a9a667d2bbb3ff86a3"
+                }
+            ]
+        }
+    ]
 }
